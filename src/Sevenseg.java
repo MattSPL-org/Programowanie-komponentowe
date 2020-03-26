@@ -13,10 +13,22 @@ public class Sevenseg extends JPanel {
 	private Color secondaryColor;
 	private Color backgroundColor;
 	
-	private File basicDigitPath = new File("7seg.png");{
+	private File basicDigitPath = new File("7seg.png");
+	private BufferedImage basicDigit;
+	
+	private int segAcolor= new Color(255,255,255).getRGB();
+	private int segBcolor= new Color(0,0,255).getRGB();
+	private int segCcolor= new Color(0,255,0).getRGB();
+	private int segDcolor= new Color(0,255,255).getRGB();
+	private int segEcolor= new Color(255,0,0).getRGB();
+	private int segFcolor= new Color(255,0,255).getRGB();
+	private int segGcolor= new Color(255,255,0).getRGB();
+	
+	
+	{
 	
 	try {
-	BufferedImage basicDigit = ImageIO.read(basicDigitPath);
+	basicDigit = ImageIO.read(basicDigitPath);
 	}
 	catch(FileNotFoundException e) {
 		System.out.println("Brak wzoru wyświetlacza 7segmentowego!");
@@ -27,34 +39,53 @@ public class Sevenseg extends JPanel {
 	
 			}
 	
-	private void setPrimaryColor(Color paint)
+	public void setPrimaryColor(Color paint)
 	{
 		this.primaryColor=paint;
 	}
 	
-	private void setSecondaryColor(Color paint)
+	public void setSecondaryColor(Color paint)
 	{
 		this.secondaryColor=paint;
 	}
 	
-	private void setBackgroundColor(Color paint)
+	public void setBackgroundColor(Color paint)
 	{
 		this.backgroundColor=paint;
 	}
 	
-	private Color getPrimaryColor()
+	public Color getPrimaryColor()
 	{
 		return primaryColor;
 	}
 	
-	private Color getSecondaryColor()
+	public Color getSecondaryColor()
 	{
 		return secondaryColor; 
 	}
 	
-	private Color getBackgroundColor()
+	public Color getBackgroundColor()
 	{
 		return backgroundColor;
+	}
+	
+	public void displayDigit(int number)
+	{
+		switch(number)
+		{
+		case 0:
+			for(int i=0; i<94;i++)
+			{
+				for(int j=0;j<144;j++)
+				{
+					if(basicDigit.getRGB(i, j)==segAcolor || basicDigit.getRGB(i, j)==segBcolor || basicDigit.getRGB(i, j)==segCcolor|| basicDigit.getRGB(i, j)==segDcolor || basicDigit.getRGB(i, j)==segEcolor || basicDigit.getRGB(i, j)==segFcolor)
+					{
+						
+						
+					}
+				}
+			}
+		}
 	}
 }
 
