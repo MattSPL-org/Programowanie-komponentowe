@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,6 +8,10 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class Sevenseg extends JPanel {
+	
+	private Color primaryColor;
+	private Color secondaryColor;
+	private Color backgroundColor;
 	
 	private File basicDigitPath = new File("7seg.png");{
 	
@@ -21,5 +26,35 @@ public class Sevenseg extends JPanel {
 	}
 	
 			}
+	
+	private void setPrimaryColor(Color paint)
+	{
+		this.primaryColor=paint;
+	}
+	
+	private void setSecondaryColor(Color paint)
+	{
+		this.secondaryColor=paint;
+	}
+	
+	private void setBackgroundColor(Color paint)
+	{
+		this.backgroundColor=paint;
+	}
+	
+	private Color getPrimaryColor()
+	{
+		return primaryColor;
+	}
+	
+	private Color getSecondaryColor()
+	{
+		return secondaryColor; 
+	}
+	
+	private Color getBackgroundColor()
+	{
+		return backgroundColor;
+	}
 }
 
